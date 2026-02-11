@@ -80,26 +80,3 @@ function handleNoClick() {
 function handleYesClick() {
     window.location.href = "yes_page.html";
 }
-function createHeart() {
-    const heart = document.createElement('div');
-    heart.classList.add('heart');
-    
-    // Pick a random heart emoji or symbol
-    const hearts = ['❤️', '💖', '💕', '💗', '🌸'];
-    heart.innerText = hearts[Math.floor(Math.random() * hearts.length)];
-    
-    // Randomize position and size
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = Math.random() * 3 + 3 + "s"; // Between 3-6s
-    heart.style.fontSize = Math.random() * 20 + 10 + "px"; // Between 10-30px
-    
-    document.getElementById('heart-bg').appendChild(heart);
-    
-    // Remove heart after it floats away so the page doesn't get slow
-    setTimeout(() => {
-        heart.remove();
-    }, 6000);
-}
-
-// Create a new heart every 300 milliseconds
-setInterval(createHeart, 300);
